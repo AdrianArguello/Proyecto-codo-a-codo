@@ -605,6 +605,8 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:  0;
+    
   }
   label {
     width: fit-content;
@@ -617,8 +619,7 @@ h1{
   .navbar div {
     overflow: hidden;
   }
-  
-  input.submit{
+.btn-primary{
     margin-left: 20rem;
   }
  
@@ -727,12 +728,13 @@ h1{
   label {
     margin-left: 1rem;
   }
-  input.submit{
-    margin-left: 9rem;
+  .btn-primary{
+    margin-left: 9rem !important;
   }
   .navbar {
     padding: 1rem 4rem;
   }
+ 
   
 
 }
