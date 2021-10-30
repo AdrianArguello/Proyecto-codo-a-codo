@@ -11,6 +11,7 @@
    display: flex;
    position: fixed;
    padding: 1rem 7rem;
+   z-index: 9;
 }
 
 .navbar img{
@@ -39,7 +40,7 @@
     box-sizing: border-box;
     display: inline-block;
     border: none;
-    width: 30px;
+    width: fit-content;
     height: 30px;
     line-height: 30px;
     font-weight: bold;
@@ -53,8 +54,6 @@
     cursor: pointer;
   }
 
-  
-  
   li {
     display:block;
     margin: 2rem;
@@ -105,7 +104,6 @@ h1{
 
 .contenedor-eclair{
   display: flex;
- 
 }
 
 .contenedor-eclair img{
@@ -130,9 +128,9 @@ h1{
   color: rgb(87, 85, 85);
 }
 
-/* .contenedor-eclair p :hover{
-
-} */
+.form-label {
+  display: block;
+}
 
   
 /* EUNYOUNG PAGE */
@@ -141,13 +139,13 @@ h1{
   display: flex;
 }
 
-.section-eunyoung p{
-  font-family:roboto;
-  color: rgb(87, 85, 85);
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 1rem;
-}
+  .section-eunyoung p{
+   font-family:roboto;
+   color: rgb(87, 85, 85);
+   font-size: 1.2rem;
+   text-align: center;
+   margin-top: 1rem;
+  }
 
   .section-eunyoung  h2{
     text-align: center;
@@ -187,10 +185,9 @@ h1{
     font-size: 1.5rem;
   }
 
-  
- .section-class{
-  background: linear-gradient(180deg, rgba(186,180,180,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
- }
+  .section-class{
+   background: linear-gradient(180deg, rgba(186,180,180,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+  }
 
   .section-class img{
    width: 100%;
@@ -211,8 +208,7 @@ h1{
     margin-left: 2rem;
     font-family: roboto;
     font-size: 1.5rem;
-    color: rgb(87, 85, 85);
-    
+    color: rgb(87, 85, 85); 
   }
 
   .section-contact{
@@ -222,9 +218,7 @@ h1{
   footer  {
     background-color: rgb(51, 49, 49);
     display: flex;
-    padding: 2rem;
-  
-    
+    padding: 2rem; 
   }
 
   footer img{
@@ -245,7 +239,6 @@ h1{
 
   footer .vinculos{
    display: flex;
- 
   }
 
 
@@ -258,7 +251,6 @@ h1{
   
   }
 
-
   footer p{
     font-family: roboto;
     font-size: .8rem;
@@ -268,25 +260,104 @@ h1{
     margin-left: 4rem;
   }
 
-  .contenedor-circulos{
+  .container {
+    width: 100%;
+    height: fit-content;
+    padding:  1rem;
+    position: relative;
     display: flex;
-    margin-top: 5rem;
-    justify-content: space-around;
-    
-   
+    justify-content: space-evenly; 
   }
-
-  .contenedor-circulos img{
-    margin-top: 3rem;
-    width: 20rem;
-    height: 20rem; 
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .contenedor-circulos :hover{
-    filter: gray; 
-  -webkit-filter: grayscale(100%);
+  
+  .container .card {
+    position: relative;
+    cursor: pointer;
   }
-
-
+  
+  .container .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+  }
+  
+  .container .card .face.face1 {
+    position: relative;
+    background: rgb(117, 117, 117);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transform: translateY(100px);
+  }
+  
+  .container .card:hover .face.face1 {
+    background: #5a5859;
+    transform: translateY(0);
+  }
+  
+  .container .card .face.face1 .content {
+    opacity: 0,3;
+    transition: 0.5s;
+  }
+  
+  .container .card:hover .face.face1 .content {
+    opacity: 1;
+  }
+  
+  .container .card .face.face1 .content img {
+    max-width: 140px;
+  }
+  
+  .container .card .face.face1 .content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .container .card .face.face2 {
+    position: relative;
+    background: rgb(255, 253, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(114, 114, 114, 0.8);
+    transform: translateY(-100px);
+  }
+  
+  .container .card:hover .face.face2 {
+    transform: translateY(0);
+  }
+  
+  .container .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container .card .face.face2 .content a {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+  }
+  
+  .container .card .face.face2 .content a:hover {
+    background: rgb(77, 75, 75);
+    color: #fff;
+  }
+ 
 .contenedor-h2{
   display: flex;
   justify-content: space-around;
@@ -365,6 +436,7 @@ h1{
 .form-main{
   background-image: url(img/fondo\ clase.webp);
   display: flex;
+  background-size: 100%
 }
 
 .form-control{
@@ -377,8 +449,8 @@ h1{
 
 .form-check h6{
   display: flex;
-  margin-left: 45rem;
-  margin-top: 5rem;
+ /*  margin-left: 0;
+  margin-top: 5rem; */
   
 }
 
@@ -388,15 +460,27 @@ h1{
  
 }
 
-.form-check{
+/* .form-check{
  margin-top: 12rem;
  margin-left: 35.5em;
 
+} */
+
+.form-check-label{
+  color: rgb(71, 71, 71); 
+  margin-top: 0;
+  width: fit-content;
 }
-.terminos{
- 
- color: rgb(71, 71, 71); 
- 
+
+.checkbox--mod{
+  float: none;
+  margin-left: auto;
+  text-align: center;
+}
+
+.form-check-input {
+  float: none !important;
+  margin-left: 0;
 }
 
 
@@ -448,9 +532,9 @@ h1{
  .input-group-text{
    margin-left: 2rem;
  }
- .form-check h6{
-   margin-left: 35rem;
- }
+ .form-check h6 {
+  margin-left: 0;
+}
  .btn-primary{
    margin-left: 30rem;
  }
@@ -459,6 +543,7 @@ h1{
 
 
 @media (max-width:768px) {
+  
   .navbar img{
     margin-left: 12rem;
   } 
@@ -468,14 +553,15 @@ h1{
   }
   .contenedor-eclair img{
     width: 25rem;
+    object-fit: contain;
   }
+  
   .contenedor-eclair__parrafos{
     margin-block-end: 4rem;
   }
   footer img{
     width: 9rem;
     height: 7rem;
-   
   }
   footer h6{
    display: none;
@@ -488,14 +574,15 @@ h1{
     font-size: 0.6rem;
     margin: 0 2rem;
     margin-top: 5rem;
-   
   }
   .vinculos{
    margin-right: 9rem;
-
   }
   .section-eunyoung p{
     margin-right: 2rem;
+  }
+  .section-eunyoung h2{
+    margin-right: 3rem;
   }
   .contenedor-video img{
     margin-left: 16rem;
@@ -504,11 +591,7 @@ h1{
     width: 70%;
     margin-left: 8rem;
   }
-  .contenedor-circulos img{
-    width: 25%;
-    height: 20%;
-    margin-top: 1rem;
-  }
+  
   .contenedor-h2{
     font-size: 0.8rem;
   }
@@ -517,9 +600,28 @@ h1{
     font-size: 0.9rem;
     color: rgb(95, 95, 95);
   }
-  .contenedor-button button{
-    
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+  label {
+    width: fit-content;
+  }
+  .form-label {
+    margin-left: 5rem;
+    display: block;
+  }
+ 
+  .navbar div {
+    overflow: hidden;
+  }
+  
+  input.submit{
+    margin-left: 20rem;
+  }
+ 
   
   
 }
@@ -543,42 +645,59 @@ h1{
     font-size: 1.5rem;
   
   }
-  .contenedor-eclair img{
-    width: 62%;
-    height: 58%;
-    margin-top: 8rem;
-    margin-right: 9rem;
-    
-    
+  .contenedor-eclair {
+    display: flex;
+    flex-direction: column-reverse;
   }
-  .contenedor-eclair__parrafos p{
-  
-   
+  .contenedor-eclair img {
+    margin: 0 auto;
+    width: 85%;
+    height: unset;
+    object-fit: cover;
   }
-
+  .contenedor-eclair__parrafos{
+    margin: 0 auto 2rem auto;
+    display: block;
+    width: 85%;
+    text-align: center;
+  }
+  footer {
+    background-color: rgb(51, 49, 49);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    justify-content: center;
+  }
+  .vinculos {
+    margin-right: 0 !important;
+  }
+  .vinculo {
+    margin-right: 0;
+  }
   footer p{
     display: none;
   }
   footer a{
-  position: static;
-  margin-left: 2rem;
-   
+    position: static;
+    margin-left: 2rem;
   }
   footer img {
     width: 35%;
     height: 30%;
   }
-  .section-eunyoung img {
-    width: 70%;
-    height: 70%;
-    margin-left: 1rem;
+  .section-eunyoung {
+    display: flex;
+    flex-direction: column;
   }
-  .section-eunyoung h2{
-    margin: 0%;
-    position: relative;
-    margin-top: 35rem;
-   margin-right: 4rem;
-    
+  .section-eunyoung h2 {
+    margin-top: 1rem;
+  }
+  .section-eunyoung p {
+    margin: 1rem auto;
+    width: 85%;
+  }
+  .section-eunyoung img {
+    margin-left: 0;
   }
   .contenedor-video img{
    width: 40%;
@@ -588,21 +707,35 @@ h1{
     width: 90%;
     margin-left: 1rem;
   }
-  .contenedor-circulos img{
-   
-  }
+ 
   .section-class h1{
     font-size: 2rem;
   }
   h2{
     font-size: 0.7rem;
   }
+  .form{
+    width: 85%;
+  }
+  .form-main {
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .form-label {
+    margin-top: 2rem;
+  }
+  label {
+    margin-left: 1rem;
+  }
+  input.submit{
+    margin-left: 9rem;
+  }
+  .navbar {
+    padding: 1rem 4rem;
+  }
   
 
-
 }
-
-
  
 
 
